@@ -66,8 +66,6 @@ function logout() {
 // Stock Management
 function addItem() {
   let name = document.getElementById("itemName").value;
-  let purchasePrice = parseFloat(document.getElementById("purchasePrice").value);
-  let sellingPrice = parseFloat(document.getElementById("sellingPrice").value);
   let qty = parseInt(document.getElementById("quantity").value);
   let category = document.getElementById("category").value;
   let netweight = document.getElementById("Net-weight").value;
@@ -80,8 +78,6 @@ function addItem() {
   let item = {
     id: "ITM-" + (db.items.length + 1),
     name,
-    purchasePrice,
-    sellingPrice,
     stock: qty,
     category,
     netweight,
@@ -97,8 +93,6 @@ function addItem() {
 
   // reset inputs
   document.getElementById("itemName").value = "";
-  document.getElementById("purchasePrice").value = "";
-  document.getElementById("sellingPrice").value = "";
   document.getElementById("quantity").value = "";
   document.getElementById("Net-weight").value = "";
   document.getElementById("gross-weight").value = "";
@@ -110,8 +104,6 @@ function renderStock() {
     table.innerHTML += `
       <tr>
         <td class="p-2">${item.name}</td>
-        <td class="p-2">₹${item.purchasePrice}</td>
-        <td class="p-2">₹${item.sellingPrice}</td>
         <td class="p-2">${item.stock}</td>
         
         <td class="p-2">${item.netweight}</td>
@@ -218,3 +210,4 @@ if (currentUser) {
 } else {
   showAuth();
 }
+

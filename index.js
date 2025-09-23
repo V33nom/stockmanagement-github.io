@@ -73,7 +73,7 @@ function addItem() {
   let carat = document.getElementById("carat").value;
   let dateAdded = new Date().toLocaleDateString();
 
-  if (!name || isNaN(purchasePrice) || isNaN(sellingPrice) || isNaN(qty)) return;
+ 
 
   let item = {
     id: "ITM-" + (db.items.length + 1),
@@ -210,4 +210,5 @@ if (currentUser) {
 } else {
   showAuth();
 }
+
 
